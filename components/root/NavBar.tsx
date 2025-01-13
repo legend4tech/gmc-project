@@ -7,9 +7,9 @@ export const navLinks = {
   name: "GMC",
   nav: [
     { title: "Home", href: "/" },
-    { title: "About Us", href: "/projects" },
-    { title: "Investment Details", href: "/about" },
-    { title: "Community Impact", href: "/invest" },
+    { title: "About Us", href: "/about" },
+    { title: "Investment Details", href: "#" },
+    { title: "Community Impact", href: "/community-impact" },
   ],
 };
 

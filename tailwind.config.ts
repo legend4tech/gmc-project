@@ -63,6 +63,7 @@ export default {
       },
       backgroundImage: {
         heroImage: "url('/farm_img.png')",
+        ourProject: "url('/nursery_plant.png')",
         blackOverlay:
           "linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%)",
       },

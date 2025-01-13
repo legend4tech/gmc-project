@@ -1,19 +1,23 @@
 "use client";
 
+import { useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
+import { motion, useAnimation, Variants } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+
+// Import images
 import ArrowRight from "@/public/arrowRight.png";
 import Cash from "@/public/cash.png";
 import Impact_img from "@/public/impact_img.png";
-import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
 
-const fadeInUp = {
+// Define animation variants
+const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
 };
 
-const staggerChildren = {
+const staggerChildren: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -23,22 +27,60 @@ const staggerChildren = {
   },
 };
 
+// Define the structure for benefit items
+interface BenefitItem {
+  image: StaticImageData;
+  title: string;
+  description: string;
+  size: string;
+}
+
+// Array of benefit items
+const benefitItems: BenefitItem[] = [
+  {
+    image: ArrowRight,
+    title: "Stability in Agriculture",
+    description: "Secure and stable agricultural investments",
+    size: "w-20 md:w-28",
+  },
+  {
+    image: Cash,
+    title: "High Returns",
+    description: "Competitive returns on your investment",
+    size: "w-24 md:w-32",
+  },
+  {
+    image: Impact_img,
+    title: "Global Impact",
+    description: "Contributing to sustainable global agriculture",
+    size: "w-20 md:w-28",
+  },
+];
+
 export default function InvestmentBenefits() {
+  const controls = useAnimation();
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
   });
 
+  // Start animation when component comes into view
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  }, [controls, inView]);
+
   return (
-    <div className="space-y-12" ref={ref}>
+    <div className="space-y-12 px-4 py-16 md:px-6 lg:px-8" ref={ref}>
       <motion.div
         className="text-center"
         initial="hidden"
-        animate={inView ? "visible" : "hidden"}
+        animate={controls}
         variants={staggerChildren}
       >
         <motion.h2
-          className="text-4xl font-bold text-main-darkGreen tracking-tight"
+          className="text-3xl md:text-4xl font-bold text-main-darkGreen tracking-tight"
           variants={fadeInUp}
         >
           Why Invest with Us
@@ -49,38 +91,23 @@ export default function InvestmentBenefits() {
       </motion.div>
 
       <motion.div
-        className="flex justify-around"
+        className="grid grid-cols-1 md:grid-cols-3 gap-8"
         initial="hidden"
-        animate={inView ? "visible" : "hidden"}
+        animate={controls}
         variants={staggerChildren}
       >
-        {[
-          {
-            image: ArrowRight,
-            title: "Stability in Agriculture",
-            description: "Secure and stable agricultural investments",
-          },
-          {
-            image: Cash,
-            title: "High Returns",
-            description: "Competitive returns on your investment",
-          },
-          {
-            image: Impact_img,
-            title: "Global Impact",
-            description: "Contributing to sustainable global agriculture",
-          },
-        ].map((item, index) => (
+        {benefitItems.map((item, index) => (
           <motion.div key={index} variants={fadeInUp}>
-            <Card className="border-none bg-primary/5">
-              <CardContent className="flex items-center flex-col space-y-9 p-3">
+            <Card className="border-none bg-primary/5 h-full">
+              <CardContent className="flex flex-col items-center justify-between space-y-6 p-6 h-full">
                 <Image
                   src={item.image}
                   alt={item.title}
-                  sizes="100vw"
-                  className="w-[7rem]"
+                  width={200}
+                  height={200}
+                  className={`${item.size} object-contain`}
                 />
-                <div className="flex flex-col items-center">
+                <div className="text-center">
                   <h3 className="mb-2 font-semibold">{item.title}</h3>
                   <p className="text-sm text-muted-foreground">
                     {item.description}

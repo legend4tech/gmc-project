@@ -3,15 +3,15 @@
 import Hero from "@/components/root/homepage/HeroSection";
 import CoreValues from "@/components/root/homepage/CoreValues";
 import InvestmentBenefits from "@/components/root/homepage/InvestmentBenefits";
-import Mission from "@/components/root/homepage/Mission";
-import Timeline from "@/components/root/homepage/Timeline";
 import { NavBar } from "@/components/root/NavBar";
+import { Footer } from "@/components/root/Footer";
 import OurOffer from "@/components/root/homepage/OurOffer";
-import { Footer } from "@/components/root/homepage/Footer";
+import Timeline from "@/components/root/homepage/Timeline";
+import Mission from "@/components/root/homepage/Mission";
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen bg-[#FFFBE8]">
       <NavBar />
       {/* Hero Section */}
       <Hero />
@@ -35,7 +35,7 @@ export default function Home() {
       <section>
         <OurOffer />
       </section>
-      <Footer></Footer>
+      <Footer />
     </main>
   );
 }

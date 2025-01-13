@@ -91,7 +91,7 @@ export default function OurOffer() {
 
         {/* Logos */}
         <motion.div
-          className="mt-12 flex justify-center gap-10"
+          className="mt-12 flex justify-center items-center gap-10"
           variants={containerVariants}
         >
           {[Organic, farmBarn, FarmLogo].map((logo, index) => (
@@ -100,7 +100,7 @@ export default function OurOffer() {
                 src={logo}
                 alt={`Partner Logo ${index + 1}`}
                 sizes="100vw"
-                className="w-[6rem]"
+                className=" w-[4rem] sm:w-[6rem]"
               />
             </motion.div>
           ))}

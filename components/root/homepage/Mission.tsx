@@ -71,7 +71,7 @@ export default function Mission() {
   };
 
   return (
-    <section className="bg-[#1B2E1B] py-16 text-white">
+    <section className="bg-[#1B2E1B] py-16 text-white overflow-hidden">
       <div className="container mx-auto px-4">
         <motion.div
           ref={ref}
