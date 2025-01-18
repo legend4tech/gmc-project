@@ -8,7 +8,7 @@ export const navLinks = {
   nav: [
     { title: "Home", href: "/" },
     { title: "About Us", href: "/about" },
-    { title: "Investment Details", href: "#" },
+    { title: "Investment Plan", href: "/investment-plan" },
     { title: "Community Impact", href: "/community-impact" },
   ],
 };
