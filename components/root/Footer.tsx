@@ -1,11 +1,60 @@
 "use client";
 
 import { Input } from "@/components/ui/input";
-import { Facebook, Twitter, Youtube, Instagram } from "lucide-react";
+import { Facebook, Youtube, Instagram } from "lucide-react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import Link from "next/link";
+import { FaXTwitter } from "react-icons/fa6";
 
 // Footer component with newsletter and links
+
+const socialLinks = [
+  {
+    title: "Facebook",
+    icon: Facebook,
+    href: "#",
+  },
+  {
+    title: "Twitter",
+    icon: FaXTwitter,
+    href: "#",
+  },
+  {
+    title: "Youtube",
+    icon: Youtube,
+    href: "#",
+  },
+  {
+    title: "Instagram",
+    icon: Instagram,
+    href: "#",
+  },
+];
+
+const footerLinks = [
+  {
+    title: "New Projects",
+    href: "#",
+  },
+  {
+    title: "Our Services",
+    href: "/investment-plan",
+  },
+  {
+    title: "Testimonials",
+    href: "#",
+  },
+  {
+    title: "About Us",
+    href: "/about",
+  },
+  {
+    title: "Contact us",
+    href: "/contact-us",
+  },
+];
+
 export function Footer() {
   const [ref, inView] = useInView({
     triggerOnce: true,
@@ -51,15 +100,15 @@ export function Footer() {
               platea dictumst. Duis porta,quam ut febus.
             </p>
             <motion.div className="flex space-x-6" variants={containerVariants}>
-              {[Facebook, Twitter, Youtube, Instagram].map((Icon, i) => (
+              {socialLinks.map((link) => (
                 <motion.a
-                  key={i}
+                  key={link.title}
                   href="#"
                   className="hover:text-green-200 transition-colors"
                   variants={itemVariants}
                   whileHover={{ scale: 1.2 }}
                 >
-                  <Icon className="h-5 w-5" />
+                  <link.icon className="h-5 w-5" />
                 </motion.a>
               ))}
             </motion.div>
@@ -69,20 +118,14 @@ export function Footer() {
           <motion.div className="lg:col-span-3" variants={itemVariants}>
             <h4 className="text-lg font-bold mb-6">Useful Links</h4>
             <motion.ul className="space-y-4" variants={containerVariants}>
-              {[
-                "New Projects",
-                "Our Services",
-                "Testimonials",
-                "About Us",
-                "Contact us",
-              ].map((link) => (
-                <motion.li key={link} variants={itemVariants}>
-                  <a
-                    href="#"
+              {footerLinks.map((link) => (
+                <motion.li key={link.title} variants={itemVariants}>
+                  <Link
+                    href={link.href}
                     className="text-gray-300 hover:text-white transition-colors"
                   >
-                    {link}
-                  </a>
+                    {link.title}
+                  </Link>
                 </motion.li>
               ))}
             </motion.ul>

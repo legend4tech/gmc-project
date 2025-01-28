@@ -1,41 +1,7 @@
-// Main page component that composes all sections of the landing page
-// Each section is lazy loaded for better performance
-import Hero from "@/components/root/homepage/HeroSection";
-import CoreValues from "@/components/root/homepage/CoreValues";
-import InvestmentBenefits from "@/components/root/homepage/InvestmentBenefits";
-import { NavBar } from "@/components/root/NavBar";
-import { Footer } from "@/components/root/Footer";
-import OurOffer from "@/components/root/homepage/OurOffer";
-import Timeline from "@/components/root/homepage/Timeline";
-import Mission from "@/components/root/homepage/Mission";
+import LandingPage from "@/components/root/homepage/LandingPage";
 
-export default function Home() {
-  return (
-    <main className="min-h-screen bg-[#FFFBE8]">
-      <NavBar />
-      {/* Hero Section */}
-      <Hero />
-      {/* Core Values Section */}
-      <section className="relative">
-        <CoreValues />
-      </section>
-      {/* Investment Benefits Section */}
-      <section className="mt-11 relative py-16">
-        <InvestmentBenefits />
-      </section>
-      {/* Mission Section */}
-      <section className="mt-11 relative ">
-        <Mission />
-      </section>
-      {/* Timeline Section */}
-      <section className=" mt-11 relative py-16">
-        <Timeline />
-      </section>
-      {/* Offer Section */}
-      <section>
-        <OurOffer />
-      </section>
-      <Footer />
-    </main>
-  );
+function Home() {
+  return <LandingPage />;
 }
+
+export default Home;
