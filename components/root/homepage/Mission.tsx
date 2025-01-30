@@ -119,6 +119,8 @@ export default function Mission() {
                 alt="Global Impact"
                 sizes="100vw"
                 className="w-full"
+                placeholder="blur"
+                quality={65}
               />
             </motion.div>
           </div>

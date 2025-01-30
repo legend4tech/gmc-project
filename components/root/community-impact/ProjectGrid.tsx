@@ -122,6 +122,8 @@ export function ProjectGrid() {
                         alt={project.title}
                         sizes="100vw"
                         className=" w-full "
+                        placeholder="blur"
+                        quality={65}
                       />
                       {/* Icon Overlay */}
                       <div className="absolute -bottom-5 left-2 bg-[#2B432B] p-2 rounded-full">

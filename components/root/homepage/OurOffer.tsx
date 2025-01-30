@@ -84,6 +84,8 @@ export default function OurOffer() {
                 alt="Stability in Agriculture"
                 sizes="100vw"
                 className="w-[30rem]"
+                placeholder="blur"
+                quality={65}
               />
             </motion.div>
           </CardContent>
@@ -101,6 +103,8 @@ export default function OurOffer() {
                 alt={`Partner Logo ${index + 1}`}
                 sizes="100vw"
                 className=" w-[4rem] sm:w-[6rem]"
+                placeholder="blur"
+                quality={65}
               />
             </motion.div>
           ))}

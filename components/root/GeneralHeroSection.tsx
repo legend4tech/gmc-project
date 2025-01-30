@@ -10,6 +10,7 @@ function GeneralHeroSection({ title }: { title: string }) {
         alt="GrassSketch"
         sizes="100vw"
         className="absolute -bottom-6"
+        
       />
     </div>
   );

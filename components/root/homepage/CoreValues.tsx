@@ -68,6 +68,8 @@ export default function CoreValues() {
               alt="Farmer on tractor"
               sizes="(max-width: 1024px) 100vw, 50vw"
               className="w-[30rem]"
+              placeholder="blur"
+              quality={65}
             />
           </div>
           {/* Profit Card */}

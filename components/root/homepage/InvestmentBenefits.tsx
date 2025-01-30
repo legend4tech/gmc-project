@@ -106,6 +106,8 @@ export default function InvestmentBenefits() {
                   width={200}
                   height={200}
                   className={`${item.size} object-contain`}
+                  placeholder="blur"
+                  quality={65}
                 />
                 <div className="text-center">
                   <h3 className="mb-2 font-semibold">{item.title}</h3>

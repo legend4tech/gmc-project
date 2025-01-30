@@ -65,6 +65,8 @@ const TeamMemberCard = ({
             alt={member.name}
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             className="w-full h-auto aspect-square object-cover"
+            placeholder="blur"
+            quality={65}
           />
           <div className="flex items-center gap-3 p-2">
             <div className="bg-[#2B432B] p-2 rounded-lg">

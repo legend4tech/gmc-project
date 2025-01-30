@@ -121,7 +121,13 @@ export default function Timeline() {
                     whileHover={{ scale: 1.1 }}
                     transition={{ delay: index * 0.2 + 0.3, duration: 0.5 }}
                   >
-                    <Image src={item.image} alt={item.title} sizes="100vw" />
+                    <Image
+                      src={item.image}
+                      alt={item.title}
+                      sizes="100vw"
+                      placeholder="blur"
+                      quality={65}
+                    />
                   </motion.div>
                 </CardContent>
               </Card>
