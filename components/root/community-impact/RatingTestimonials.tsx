@@ -132,7 +132,7 @@ export function RatingTestimonials() {
 
               {/* Quote */}
               <blockquote className="text-xl">
-                "{getCurrentTestimonial().quote}"
+                &quot;{getCurrentTestimonial().quote}&quot;
               </blockquote>
 
               {/* Author Info */}

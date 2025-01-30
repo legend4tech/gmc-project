@@ -5,7 +5,7 @@ interface PropType {
   videoUrl?: string;
 }
 
-function GeneralVideoPreview({ title, videoUrl }: PropType) {
+function GeneralVideoPreview({ title }: PropType) {
   return (
     <div className="bg-ourProject bg-no-repeat bg-cover h-[85vh]">
       <div className="flex flex-col justify-center items-center  h-full space-y-20">

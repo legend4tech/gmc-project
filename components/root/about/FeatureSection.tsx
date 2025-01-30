@@ -89,7 +89,7 @@ export function FeatureSection() {
               <motion.p key={i} variants={itemVariants}>
                 There are many variations of passages of lorem ipsum available
                 but the majority have suffered alteration in some form by
-                injected humor or random word which don't look even.
+                injected humor or random word which don&#39;t look even.
               </motion.p>
             ))}
           </div>
