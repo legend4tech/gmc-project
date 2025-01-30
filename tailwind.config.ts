@@ -54,6 +54,7 @@ export default {
         main: {
           darkGreen: "#263C28",
           lightGreen: "#4BAF47",
+          hover: "#3d9d3a",
           gold: "#F7C35F",
         },
       },

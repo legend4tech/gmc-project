@@ -39,7 +39,7 @@ export default function ForgotPasswordForm() {
     // Simulate API call
     await new Promise((resolve) => setTimeout(resolve, 1000));
     setIsLoading(false);
-    toast("Reset email sent!", {
+    toast.success("Reset email sent!", {
       description: "Check your inbox for further instructions.",
     });
     console.log(values);

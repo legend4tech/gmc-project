@@ -44,7 +44,7 @@ export default function PopupLoginForm() {
     // Simulate API call
     await new Promise((resolve) => setTimeout(resolve, 1000));
     setIsLoading(false);
-    toast("Login successful!", {
+    toast.success("Login successful!", {
       description: "You have been logged in.",
     });
     console.log(values);

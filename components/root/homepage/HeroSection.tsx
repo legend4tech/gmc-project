@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { PlayCircle, PauseCircle, Volume2, VolumeX } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useRouter } from "next/navigation";
 
 // Hero component: Displays the main banner with video background, headline, and call-to-action button
 export default function Hero() {
@@ -12,6 +13,7 @@ export default function Hero() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(true);
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
+  const router = useRouter();
 
   // Reference to the video element for direct manipulation
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -93,8 +95,11 @@ export default function Hero() {
               innovative investment solutions.
             </p>
             <div className="flex flex-wrap justify-center lg:justify-start gap-4">
-              <Button className="px-8 py-3 text-lg bg-green-500 hover:bg-green-600 text-white">
-                Learn More
+              <Button
+                className="p-8 text-lg bg-main-lightGreen hover:bg-main-hover text-white"
+                onClick={() => router.push("/signup")}
+              >
+                Get Started
               </Button>
             </div>
           </motion.div>

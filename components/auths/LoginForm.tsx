@@ -41,7 +41,7 @@ export default function LoginForm() {
     setIsLoading(true);
     await new Promise((resolve) => setTimeout(resolve, 1000));
     setIsLoading(false);
-    toast("Login successful!", {
+    toast.success("Login successful!", {
       description: "You have been logged in.",
     });
     console.log(values);
@@ -51,7 +51,7 @@ export default function LoginForm() {
     setIsLoading(true);
     await new Promise((resolve) => setTimeout(resolve, 1000));
     setIsLoading(false);
-    toast("Google Sign In", {
+    toast.success("Google Sign In", {
       description: "You have successfully signed in with Google.",
     });
   };
